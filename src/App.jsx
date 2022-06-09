@@ -30,13 +30,14 @@ function App() {
   }
 
   return (
-    <>
+    <div className='app'>
+      <h1>Todo list</h1>
       <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <input type="text" ref={todoNameRef} />
-      <button onClick={handleAddTodo}>タスクの追加</button>
-      <button onClick={handleClear}>完了したタスクの削除</button>
-      <div>残りのタスク:{todos.filter((todo) => !todo.completed).length}</div>
-    </>
+      <input type="text" placeholder='Input todo!' ref={todoNameRef} />
+      <button onClick={handleAddTodo}>Add Task</button>
+      <button onClick={handleClear}>Delete compleated tasks</button>
+      <div className='note'>Remaining tasks:{todos.filter((todo) => !todo.completed).length}</div>
+    </div>
   );
 }
 
