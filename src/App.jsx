@@ -35,7 +35,7 @@ function App() {
       {todos.length > 0 ? <ul><TodoList todos={todos} toggleTodo={toggleTodo} /></ul> : null}
       <input type="text" placeholder='Input todo!' ref={todoNameRef} />
       <button className='addbtn' onClick={handleAddTodo}>Add Task</button>
-      <button onClick={handleClear}>Delete compleated tasks</button>
+      <button onClick={handleClear} className='deletebtn'>Delete compleated tasks</button>
       <div className='note'>Remaining tasks:{todos.filter((todo) => !todo.completed).length}</div>
     </div>
   );
