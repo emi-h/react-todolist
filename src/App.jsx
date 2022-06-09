@@ -32,9 +32,9 @@ function App() {
   return (
     <div className='app'>
       <h1>Todo list</h1>
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      {todos.length > 0 ? <ul><TodoList todos={todos} toggleTodo={toggleTodo} /></ul> : null}
       <input type="text" placeholder='Input todo!' ref={todoNameRef} />
-      <button onClick={handleAddTodo}>Add Task</button>
+      <button className='addbtn' onClick={handleAddTodo}>Add Task</button>
       <button onClick={handleClear}>Delete compleated tasks</button>
       <div className='note'>Remaining tasks:{todos.filter((todo) => !todo.completed).length}</div>
     </div>
